@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Notes</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #3B82F6;
+            --primary-hover: #2563EB;
+            --background: #FFFFFF;
+            --text: #334155;
+            --text-secondary: #64748B;
+            --accent: #EC4899;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            letter-spacing: 0.01em;
+        }
+
+        header {
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: var(--background);
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        .nav-container {
+            max-width: 850px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        header a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 0.5rem 0.875rem;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        header a:hover {
+            color: var(--primary);
+        }
+
+        main {
+            flex: 1;
+            max-width: 850px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+            width: 100%;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.625rem 1.25rem;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: var(--primary-hover);
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin: 1rem 0;
+            padding: 1rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        ul li:last-child {
+            border-bottom: none;
+        }
+
+        .action-links {
+            display: flex;
+            gap: 0.625rem;
+        }
+
+        .action-links a {
+            color: var(--text-secondary);
+            padding: 0.375rem;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .action-links a:hover {
+            color: var(--primary);
+        }
+
+        .material-icons {
+            font-size: 18px;
+        }
+
+        /* Typography styles */
+        h1 {
+            font-size: 1.875rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--text);
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        @media (max-width: 768px) {
+            main {
+                margin: 1rem auto;
+                padding: 0 1rem;
+            }
+
+            header a {
+                font-size: 0.9rem;
+                padding: 0.375rem 0.75rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav-container">
+            <a href="/posts/">HOME</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>
